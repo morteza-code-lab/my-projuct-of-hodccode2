@@ -70,34 +70,6 @@ if (!function_exists('hodcode_enqueue_styles')) {
 }
 add_action('wp_enqueue_scripts', 'hodcode_enqueue_styles');
 
-// // ---------------------- Enqueue Styles & Scripts ----------------------
-// if (!function_exists('hodcode_enqueue_styles')) {
-//     function hodcode_enqueue_styles() {
-//         wp_enqueue_style('hodcode-style', get_stylesheet_uri());
-//         wp_enqueue_style('hodcode-webfont', get_template_directory_uri() . '/assets/fontiran.css');
-
-//         // 1. تغییر در نحوه لود Tailwind CDN (محل قرارگیری)
-//         // این کار تضمین می کند که Tailwind در هد یا ابتدای صفحه لود شود، نه در فوتر
-//         wp_enqueue_script(
-//             'tailwind',
-//             'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4',
-//             [],
-//             null,
-//             false // <--- این باید false باشد (لود در هد)، یا حذف شود
-//         );
-
-//         // 2. لود اسکریپت رفرش Tailwind
-//         wp_enqueue_script(
-//             'tailwind-refresh', 
-//             get_template_directory_uri() . '/js/tailwind-refresh.js', 
-//             ['jquery'], // نیازی به 'tailwind' به عنوان وابستگی نیست اگر در هد لود شود
-//             filemtime(get_template_directory() . '/js/tailwind-refresh.js'), 
-//             true // لود در فوتر
-//         );
-//     }
-// }
-// add_action('wp_enqueue_scripts', 'hodcode_enqueue_styles');
-
 // ---------------------- Helpers ----------------------
 function toPersianNumerals($input) {
     $english = ['0','1','2','3','4','5','6','7','8','9'];
@@ -242,4 +214,5 @@ add_action('woocommerce_single_product_summary', function () {
 
     </div>
 <?php
+
 }, 5);
